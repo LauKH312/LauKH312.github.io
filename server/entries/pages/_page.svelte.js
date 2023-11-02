@@ -1,4 +1,4 @@
-import { c as create_ssr_component, e as escape, a as subscribe, v as validate_component, d as each, b as add_attribute } from "../../chunks/ssr.js";
+import { c as create_ssr_component, e as escape, a as subscribe, b as add_attribute, v as validate_component, d as each } from "../../chunks/ssr.js";
 import { w as writable } from "../../chunks/index.js";
 import "../../chunks/firebase.js";
 const whitespace_svelte_svelte_type_style_lang = "";
@@ -23,6 +23,7 @@ const RustIcon = "/_app/immutable/assets/rust-lang-icon.ba5539ba.svg";
 const SassIcon = "/_app/immutable/assets/sass-lang-icon.e98dfe0d.svg";
 const Svelteicon = "/_app/immutable/assets/svelte-logo.dc8a06dc.svg";
 const TSIcon = "/_app/immutable/assets/typescriptlang-icon.ec953d09.svg";
+const ColourSplash = "/_app/immutable/assets/coloursplash.b7b2cb5c.webp";
 const text = "Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
 const AboutText = {
   text
@@ -187,7 +188,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
   $$unsubscribe_dynBgOpacity();
   $$unsubscribe_theme();
-  return `<div style="${"--op: " + escape($dynBgOpacity, true) + ";"}"><img id="dynBg" src="src/routes/assets/img/coloursplash.webp" alt="" style="opacity: var(--op); transition: opacity 0.5s ease-in-out;" srcset="" class="svelte-18tja11"></div> <div style="${"--op: " + escape(1 - $dynBgOpacity, true) + ";"}"><img id="bgimg-persistent" src="src/routes/assets/img/coloursplash.webp" alt="" style="opacity: var(--op); transition: opacity 0.5s ease-in-out;" srcset="" class="svelte-18tja11"></div> <div id="hero" class="svelte-18tja11"><h1 id="main-heading" class="svelte-18tja11" data-svelte-h="svelte-1b8vhrm">Laurits Hillemann</h1> <h2 class="svelte-18tja11" data-svelte-h="svelte-74ir76">Fullstack Dev | Native Dev</h2> <div id="call-to-action" class="svelte-18tja11"><p class="svelte-18tja11" data-svelte-h="svelte-15l0mru">I&#39;m a pragmatic generalist ready to solve your problems</p> <div style="${"--theme: " + escape($theme, true)}"><button style="background:var(--theme);" data-svelte-h="svelte-18gns31">Contact</button></div></div></div> ${validate_component(Whitespace, "Whitespace").$$render($$result, { height: "20rem" }, {}, {})} <div id="techview" class="svelte-18tja11"> ${each(infos, (info) => {
+  return `<div style="${"--op: " + escape($dynBgOpacity, true) + ";"}"><img id="dynBg"${add_attribute("src", ColourSplash, 0)} alt="" style="opacity: var(--op); transition: opacity 0.5s ease-in-out;" srcset="" class="svelte-18tja11"></div> <div style="${"--op: " + escape(1 - $dynBgOpacity, true) + ";"}"><img id="bgimg-persistent"${add_attribute("src", ColourSplash, 0)} alt="" style="opacity: var(--op); transition: opacity 0.5s ease-in-out;" srcset="" class="svelte-18tja11"></div> <div id="hero" class="svelte-18tja11"><h1 id="main-heading" class="svelte-18tja11" data-svelte-h="svelte-1b8vhrm">Laurits Hillemann</h1> <h2 class="svelte-18tja11" data-svelte-h="svelte-74ir76">Fullstack Dev | Native Dev</h2> <div id="call-to-action" class="svelte-18tja11"><p class="svelte-18tja11" data-svelte-h="svelte-15l0mru">I&#39;m a pragmatic generalist ready to solve your problems</p> <div style="${"--theme: " + escape($theme, true)}"><button style="background:var(--theme);" data-svelte-h="svelte-18gns31">Contact</button></div></div></div> ${validate_component(Whitespace, "Whitespace").$$render($$result, { height: "20rem" }, {}, {})} <div id="techview" class="svelte-18tja11"> ${each(infos, (info) => {
     return `<div><img${add_attribute("src", info.image, 0)} alt=""${add_attribute("id", info.text.name, 0)} class="tech-icon svelte-18tja11"> </div>`;
   })}</div> ${validate_component(Whitespace, "Whitespace").$$render($$result, { height: "20rem" }, {}, {})} <div id="short-about" class="svelte-18tja11"><h3 class="svelte-18tja11" data-svelte-h="svelte-dnshfn">Hello!</h3> <p class="svelte-18tja11">${escape(AboutText.text)}</p> <div id="facts-quad" class="svelte-18tja11" data-svelte-h="svelte-b014lp"><div class="facts-column"><p class="svelte-18tja11">📍 Greve, Denmark</p> <p class="svelte-18tja11">🗣 Danish &amp; English</p></div> <div class="facts-column"><p class="svelte-18tja11">♂ He/Him</p> <p class="svelte-18tja11">🎓 HTX Graduate</p></div></div> </div>`;
 });
